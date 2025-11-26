@@ -8,11 +8,11 @@ Seamlessly read, edit, and save trigger words in **WebUI (Automatic1111) compati
 
 ## ✨ Features (功能特性)
 
-📖 自动读取 (Auto-Read): 自动识别并加载 LoRA 同级目录下的 .json, .txt 或 .civitai.info 文件中的触发词。
-✍️ 双向读写 (Read & Edit): 不仅能读取，还能直接在节点内修改触发词并保存。
-🔄 WebUI 格式对齐 (WebUI Alignment): 写入文件时严格遵循 A1111 WebUI 的标准 JSON 格式（如 "activation text", "sd version"），确保跨软件兼容性，不破坏原有数据。
-🔗 智能合并 (Auto-Merge): 支持单体串联或堆栈式加载，所有 LoRA 的触发词会自动以逗号分隔进行合并输出，无需额外的文本拼接节点。
-🐍 纯后端实现 (Pure Python): 零前端依赖，运行稳定，无需复杂的安装步骤。
+*   📖 自动读取 (Auto-Read): 自动识别并加载 LoRA 同级目录下的 .json, .txt 或 .civitai.info 文件中的触发词。
+*   ✍️ 双向读写 (Read & Edit): 不仅能读取，还能直接在节点内修改触发词并保存。
+*   🔄 WebUI 格式对齐 (WebUI Alignment): 写入文件时严格遵循 A1111 WebUI 的标准 JSON 格式（如 "activation text", "sd version"），确保跨软件兼容性，不破坏原有数据。
+*   🔗 智能合并 (Auto-Merge): 支持单体串联或堆栈式加载，所有 LoRA 的触发词会自动以逗号分隔进行合并输出，无需额外的文本拼接节点。
+*   🐍 纯后端实现 (Pure Python): 零前端依赖，运行稳定，无需复杂的安装步骤。
 
 ## 📦 Nodes (节点介绍)
 
