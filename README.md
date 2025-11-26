@@ -39,14 +39,19 @@ Load 3 LoRAs at once.
 ## 🚀 Installation (安装方法)
 
 1.  Navigate to your ComfyUI custom nodes directory:
+    (进入 ComfyUI 的 custom_nodes 目录)
     ```bash
     cd ComfyUI/custom_nodes/
     ```
+
 2.  Clone this repository:
+    (克隆本仓库)
     ```bash
-    git clone https://github.com/YourUsername/ComfyUI-DvD-LoraTriggerwordsManager.git
+    git clone https://github.com/idvdii/ComfyUI-DvD-LoraTriggerwordsManager.git
     ```
+
 3.  Restart ComfyUI.
+    (重启 ComfyUI)
 
 ## 🛠 Usage (使用说明)
 
@@ -78,4 +83,5 @@ The generated JSON files use the standard format (`"activation text"`, etc.), en
 ---
 
 **License**: MIT
+
 
