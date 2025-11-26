@@ -50,14 +50,32 @@ Load 3 LoRAs at once.
 
 ## 🛠 Usage (使用说明)
 
-1.  **Read Mode**: Just select a LoRA. The `trigger_text` output will output the trigger words found in the file.
-2.  **Save Mode**: 
-    *   Change `mode` to **Save**.
-    *   Type your new tags in `edit_text`.
-    *   Queue a prompt (run once).
-    *   The `.json` file in your LoRA directory will be updated.
-    *   Switch back to **Read** mode for normal use.
+### 1. Read Mode (读取模式)
+Just select a LoRA. The node will automatically read the associated trigger words.
+选择 LoRA 后，节点会自动读取关联的触发词。
+![Read Mode](assets/demo_01_read.png)
 
+### 2. Save Mode (保存/修改模式)
+*   Change `mode` to **Save**.
+*   Type your new tags in `edit_text`.
+*   Queue a prompt (run once).
+*   **Result:** The JSON file is updated/created instantly.
+*   切换到 **Save** 模式，输入新触发词并运行一次即可保存。
+![Save Mode](assets/demo_02_save.png)
+
+### 3. Stack Mode (堆栈与合并)
+Multiple LoRAs in one node. Trigger words are automatically concatenated. You can also specify which LoRA to update using `save_target`.
+多重 LoRA 堆栈，自动合并触发词。可以通过 `save_target` 指定要修改哪一个 LoRA 的文件。
+![Stack Mode](assets/demo_03_stack.png)
+
+### 4. Compatibility (完美兼容 WebUI)
+The generated JSON files use the standard format (`"activation text"`, etc.), ensuring full compatibility with Stable Diffusion WebUI.
+生成的 JSON 文件采用 WebUI 标准格式，确保跨软件兼容。
+
+| WebUI Format vs Plugin Format | Smart Update (Preserve Data) |
+| :---: | :---: |
+| ![Format](assets/demo_04_format.png) | ![Update](assets/demo_05_update.png) |
 ---
 
 **License**: MIT
+
