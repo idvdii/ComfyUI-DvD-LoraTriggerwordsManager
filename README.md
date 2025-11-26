@@ -8,16 +8,11 @@ Seamlessly read, edit, and save trigger words in **WebUI (Automatic1111) compati
 
 ## ✨ Features (功能特性)
 
-*   **Auto-Read Triggers**: Automatically reads `.json` or `.txt` metadata associated with your LoRA.
-    *   自动读取与 LoRA 关联的元数据文件。
-*   **WebUI Compatibility**: Saves edited trigger words in the standard format (`"activation text"`) used by Stable Diffusion WebUI.
-    *   完美兼容 WebUI，保存格式为标准的 `"activation text"`。
-*   **Chainable Workflow**: All nodes have a `pre_text` input, allowing you to chain multiple LoRA loaders together. The trigger words will be automatically concatenated with commas.
-    *   支持“糖葫芦”式串联，触发词自动合并。
-*   **Info Log**: Provides a clean, formatted log output for debugging or checking details.
-    *   提供清晰的日志输出端口。
-*   **Zero Dependencies**: Pure Python implementation, no complex JavaScript or extra pip installs required.
-    *   零依赖，纯 Python 实现，无需安装额外库。
+📖 自动读取 (Auto-Read): 自动识别并加载 LoRA 同级目录下的 .json, .txt 或 .civitai.info 文件中的触发词。
+✍️ 双向读写 (Read & Edit): 不仅能读取，还能直接在节点内修改触发词并保存。
+🔄 WebUI 格式对齐 (WebUI Alignment): 写入文件时严格遵循 A1111 WebUI 的标准 JSON 格式（如 "activation text", "sd version"），确保跨软件兼容性，不破坏原有数据。
+🔗 智能合并 (Auto-Merge): 支持单体串联或堆栈式加载，所有 LoRA 的触发词会自动以逗号分隔进行合并输出，无需额外的文本拼接节点。
+🐍 纯后端实现 (Pure Python): 零前端依赖，运行稳定，无需复杂的安装步骤。
 
 ## 📦 Nodes (节点介绍)
 
@@ -83,5 +78,6 @@ The generated JSON files use the standard format (`"activation text"`, etc.), en
 ---
 
 **License**: MIT
+
 
 
