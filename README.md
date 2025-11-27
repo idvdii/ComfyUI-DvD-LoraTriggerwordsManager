@@ -89,15 +89,17 @@ Just run the node. It calculates the hash, queries Civitai, and finds the correc
 直接运行节点，它会自动通过哈希值从 Civitai 找到正确的触发词。
 ![Console Log](assets/auto_03_log.png)
 
-**3. Generation & Saving (生成并保存):**
-The tags are injected into the prompt, and a standard `.json` file is **automatically created**.
-触发词自动填入，且自动生成了标准的 JSON 文件，下次使用无需再联网。
+**3. Generation & Result (生成结果):**
+The tags are automatically injected into the prompt to generate the image.
+触发词自动填入提示词并生成图像。
 ![Result](assets/auto_04_image.png)
-![JSON Created](assets/auto_05_json_file.png)
 
-**4. Result Content (生成的JSON内容):**
-![JSON Content](assets/auto_06_json_content.png)
+**4. Permanent Saving (自动保存文件):**
+A standard `.json` file is **automatically created** with the correct format. You never need to look it up again!
+标准的 JSON 文件会自动生成并保存在目录下，下次使用无需再联网。
+![JSON Created](assets/auto_05_json_file.png)
 
 ---
 
 **License**: MIT
+
