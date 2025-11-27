@@ -1,23 +1,22 @@
 # ComfyUI-DvD-LoraTriggerwordsManager
 
+[中文说明](README_CN.md)
+
 A set of professional ComfyUI custom nodes designed to manage LoRA trigger words efficiently. 
 Seamlessly read, edit, and save trigger words in **WebUI (Automatic1111) compatible JSON format**.
 
-一款专业的 ComfyUI 自定义节点，用于高效管理 LoRA 触发词。
-支持读取、编辑并保存 **WebUI (Automatic1111) 兼容的 JSON 格式** 触发词文件。
+## ✨ Features
 
-## ✨ Features (功能特性)
-
-*   📖 **自动读取 (Auto-Read)**: 自动识别并加载 LoRA 同级目录下的与 LoRA 同名 .json, .txt文件中的触发词。
-*   🌐 **智能联网 (Smart Lookup)**: **(New!)** 当本地没有触发词文件时，自动计算模型哈希值 (AutoV3/V2) 并从 Civitai 获取触发词，自动生成配置文件。
-*   ✍️ **双向读写 (Read & Edit)**: 不仅能读取，还能直接在节点内修改触发词并保存。
-*   🔄 **WebUI 格式对齐 (WebUI Alignment)**: 写入文件时严格遵循 A1111 WebUI 的标准 JSON 格式（如 "activation text", "sd version"），确保跨软件兼容性，不破坏原有数据。
-*   🔗 **智能合并 (Auto-Merge)**: 支持单体串联或堆栈式加载，所有 LoRA 的触发词会自动以逗号分隔进行合并输出，无需额外的文本拼接节点。
-*   🐍 **纯后端实现 (Pure Python)**: 零前端依赖，运行稳定，无需复杂的安装步骤。
+*   📖 **Auto-Read**: Automatically reads `.json` or `.txt` metadata associated with your LoRA from the same directory.
+*   🌐 **Smart Lookup**: **(New!)** If no local metadata exists, it automatically calculates the model hash (AutoV3/V2), queries Civitai for trigger words, and generates a config file.
+*   ✍️ **Read & Edit**: Not only reads tags but allows you to edit and save them directly within the node.
+*   🔄 **WebUI Alignment**: Saves files strictly following the A1111 WebUI standard JSON format (e.g., `"activation text"`, `"sd version"`), ensuring full cross-software compatibility and data preservation.
+*   🔗 **Auto-Merge**: Whether chaining single nodes or using a stack, all trigger words are automatically concatenated with commas. No need for extra text concatenation nodes.
+*   🐍 **Pure Python**: Zero frontend dependencies, stable performance, and no complex installation steps.
 
 ![Example Workflow](assets/example_workflow.png)
 
-## 📦 Nodes (节点介绍)
+## 📦 Nodes
 
 ### 1. DvD LoRA Loader (Trigger Words)
 Standard LoRA loader with `MODEL` and `CLIP` connections.
@@ -34,75 +33,62 @@ Load 3 LoRAs at once.
 *   **Merge Logic**: Automatically combines trigger words from all 3 LoRAs + `pre_text`.
 *   **Save Target**: Select which LoRA (1, 2, or 3) to update when saving.
 
-## 🚀 Installation (安装方法)
+## 🚀 Installation
 
 1.  Navigate to your ComfyUI custom nodes directory:
-    (进入 ComfyUI 的 custom_nodes 目录)
     ```bash
     cd ComfyUI/custom_nodes/
     ```
 
 2.  Clone this repository:
-    (克隆本仓库)
     ```bash
     git clone https://github.com/idvdii/ComfyUI-DvD-LoraTriggerwordsManager.git
     ```
 
 3.  Restart ComfyUI.
-    (重启 ComfyUI)
 
-## 🛠 Usage (使用说明)
+## 🛠 Usage
 
-### 1. Read Mode (读取模式)
+### 1. Read Mode
 Just select a LoRA. The node will automatically read the associated trigger words.
-选择 LoRA 后，节点会自动读取关联的触发词。
 ![Read Mode](assets/demo_01_read.png)
 
-### 2. Save Mode (保存/修改模式)
+### 2. Save Mode
 *   Change `mode` to **Save**.
 *   Type your new tags in `edit_text`.
 *   Queue a prompt (run once).
 *   **Result:** The JSON file is updated/created instantly.
-*   切换到 **Save** 模式，输入新触发词并运行一次即可保存。
 ![Save Mode](assets/demo_02_save.png)
 
-### 3. Stack Mode (堆栈与合并)
+### 3. Stack Mode
 Multiple LoRAs in one node. Trigger words are automatically concatenated. You can also specify which LoRA to update using `save_target`.
-多重 LoRA 堆栈，自动合并触发词。可以通过 `save_target` 指定要修改哪一个 LoRA 的文件。
 ![Stack Mode](assets/demo_03_stack.png)
 
-### 4. Compatibility (完美兼容 WebUI)
+### 4. Compatibility
 The generated JSON files use the standard format (`"activation text"`, etc.), ensuring full compatibility with Stable Diffusion WebUI.
-生成的 JSON 文件采用 WebUI 标准格式，确保跨软件兼容。
 
 | WebUI Format vs Plugin Format | Smart Update (Preserve Data) |
 | :---: | :---: |
 | ![Format](assets/demo_04_format.png) | ![Update](assets/demo_05_update.png) |
 
-### 5. Automatic Discovery (演示：自动抓取触发词)
+### 5. Automatic Discovery
 **Scenario:** You downloaded a "naked" LoRA (`.safetensors` only) and don't know the trigger words.
-**场景**：你下载了一个只有 `.safetensors` 的 LoRA，没有元数据文件。
 
-**1. The initial folder (No JSON / 初始状态无JSON):**
+**1. The initial folder (No JSON):**
 ![Initial Folder](assets/auto_01_folder.png)
 
-**2. Automatic Online Lookup (自动计算哈希并联网查询):**
+**2. Automatic Online Lookup:**
 Just run the node. It calculates the hash, queries Civitai, and finds the correct tags (e.g. "MMD, 3D").
-直接运行节点，它会自动通过哈希值从 Civitai 找到正确的触发词。
 ![Console Log](assets/auto_03_log.png)
 
-**3. Generation & Result (生成结果):**
+**3. Generation & Result:**
 The tags are automatically injected into the prompt to generate the image.
-触发词自动填入提示词并生成图像。
 ![Result](assets/auto_04_image.png)
 
-**4. Permanent Saving (自动保存文件):**
+**4. Permanent Saving:**
 A standard `.json` file is **automatically created** with the correct format. You never need to look it up again!
-标准的 JSON 文件会自动生成并保存在目录下，下次使用无需再联网。
 ![JSON Created](assets/auto_05_json_file.png)
 
 ---
 
 **License**: MIT
-
-
