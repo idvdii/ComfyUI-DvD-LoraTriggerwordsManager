@@ -1,0 +1,1113 @@
+{
+  "id": "d4989f7e-196c-4a44-877e-c0dfebe67e5e",
+  "revision": 0,
+  "last_node_id": 19,
+  "last_link_id": 35,
+  "nodes": [
+    {
+      "id": 2,
+      "type": "DvD_LoraLoader_Stack",
+      "pos": [
+        -60,
+        -310
+      ],
+      "size": [
+        400,
+        340
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 1
+        },
+        {
+          "label": "clip",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2
+        },
+        {
+          "label": "pre_text",
+          "name": "pre_text",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "MODEL",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            27
+          ]
+        },
+        {
+          "label": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            28
+          ]
+        },
+        {
+          "label": "trigger_text",
+          "name": "trigger_text",
+          "type": "STRING",
+          "links": [
+            7,
+            29
+          ]
+        },
+        {
+          "label": "info_log",
+          "name": "info_log",
+          "type": "STRING",
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "idvdii/ComfyUI-DvD-LoraTriggerwordsManager",
+        "ver": "6316912320a98e60a735e1e4e5f885acedb944c1",
+        "Node name for S&R": "DvD_LoraLoader_Stack"
+      },
+      "widgets_values": [
+        "败犬/Yanami_Anna-66.safetensors",
+        1,
+        "None",
+        1,
+        "None",
+        1,
+        "Read (只读)",
+        "None (不保存)",
+        "",
+        [
+          false,
+          true
+        ]
+      ]
+    },
+    {
+      "id": 6,
+      "type": "easy showAnything",
+      "pos": [
+        350,
+        -310
+      ],
+      "size": [
+        300,
+        110
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "anything",
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "label": "output",
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "f550ce83a84114b0eeae5510679910e914f5d514",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "yanami anna"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "easy showAnything",
+      "pos": [
+        350,
+        -150
+      ],
+      "size": [
+        300,
+        110
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "anything",
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 6
+        }
+      ],
+      "outputs": [
+        {
+          "label": "output",
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "f550ce83a84114b0eeae5510679910e914f5d514",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "╔══════════ DvD LoRA Stack ══════════╗\n║ [1] 败犬/Yanami_Anna-66.safetensors\n║ ► yanami anna\n╟────────────────────────────────────╢\n║ [2] None\n╟────────────────────────────────────╢\n║ [3] None\n╚════════════════════════════════════╝"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "easy showAnything",
+      "pos": [
+        350,
+        90
+      ],
+      "size": [
+        300,
+        110
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "anything",
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 33
+        }
+      ],
+      "outputs": [
+        {
+          "label": "output",
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "f550ce83a84114b0eeae5510679910e914f5d514",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "yanami anna, wigo"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "DvD_LoraLoader_ModelOnly",
+      "pos": [
+        -60,
+        440
+      ],
+      "size": [
+        400,
+        210
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 30
+        },
+        {
+          "label": "pre_text",
+          "name": "pre_text",
+          "shape": 7,
+          "type": "STRING",
+          "link": 34
+        }
+      ],
+      "outputs": [
+        {
+          "label": "MODEL",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            19
+          ]
+        },
+        {
+          "label": "trigger_text",
+          "name": "trigger_text",
+          "type": "STRING",
+          "links": [
+            10
+          ]
+        },
+        {
+          "label": "info_log",
+          "name": "info_log",
+          "type": "STRING",
+          "links": [
+            11
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "idvdii/ComfyUI-DvD-LoraTriggerwordsManager",
+        "ver": "6316912320a98e60a735e1e4e5f885acedb944c1",
+        "Node name for S&R": "DvD_LoraLoader_ModelOnly"
+      },
+      "widgets_values": [
+        "特效/glowing eye trail_pony_bx-v1.10.safetensors",
+        1,
+        "Read (只读)",
+        "",
+        [
+          false,
+          true
+        ]
+      ]
+    },
+    {
+      "id": 10,
+      "type": "easy showAnything",
+      "pos": [
+        350,
+        450
+      ],
+      "size": [
+        300,
+        80
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "anything",
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 10
+        }
+      ],
+      "outputs": [
+        {
+          "label": "output",
+          "name": "output",
+          "type": "*",
+          "links": [
+            15
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "f550ce83a84114b0eeae5510679910e914f5d514",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "yanami anna, wigo, glowing eye trail"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "easy showAnything",
+      "pos": [
+        350,
+        240
+      ],
+      "size": [
+        300,
+        120
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "anything",
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 35
+        }
+      ],
+      "outputs": [
+        {
+          "label": "output",
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "f550ce83a84114b0eeae5510679910e914f5d514",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "=== DvD Standard Loader ===\nFile: 画风/wigostyle.safetensors\nStatus: Read successful\n🔗 [Pre_text Added]: Yes\n--- Triggers ---\nwigo\n======================="
+      ]
+    },
+    {
+      "id": 9,
+      "type": "easy showAnything",
+      "pos": [
+        350,
+        570
+      ],
+      "size": [
+        300,
+        76
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "anything",
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 11
+        }
+      ],
+      "outputs": [
+        {
+          "label": "output",
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "f550ce83a84114b0eeae5510679910e914f5d514",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "=== DvD Model Only Loader ===\nFile: 特效/glowing eye trail_pony_bx-v1.10.safetensors\n🔗 [Pre_text Added]\n--- Triggers ---\nglowing eye trail\n========================"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1100,
+        -310
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "clip",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 31
+        },
+        {
+          "label": "text",
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 16
+        }
+      ],
+      "outputs": [
+        {
+          "label": "CONDITIONING",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            20
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.60",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "",
+        [
+          false,
+          true
+        ]
+      ]
+    },
+    {
+      "id": 13,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1100,
+        -70
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "clip",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 32
+        }
+      ],
+      "outputs": [
+        {
+          "label": "CONDITIONING",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            21
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.60",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "",
+        [
+          false,
+          true
+        ]
+      ]
+    },
+    {
+      "id": 14,
+      "type": "KSampler",
+      "pos": [
+        1510,
+        -310
+      ],
+      "size": [
+        270,
+        474
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 19
+        },
+        {
+          "label": "positive",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 20
+        },
+        {
+          "label": "negative",
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 21
+        },
+        {
+          "label": "latent_image",
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 26
+        }
+      ],
+      "outputs": [
+        {
+          "label": "LATENT",
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            23
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.60",
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        977611509842397,
+        "randomize",
+        20,
+        8,
+        "euler",
+        "simple",
+        1
+      ]
+    },
+    {
+      "id": 16,
+      "type": "VAEDecode",
+      "pos": [
+        1790,
+        -310
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "samples",
+          "name": "samples",
+          "type": "LATENT",
+          "link": 23
+        },
+        {
+          "label": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "link": 25
+        }
+      ],
+      "outputs": [
+        {
+          "label": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            24
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.60",
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 18,
+      "type": "EmptyLatentImage",
+      "pos": [
+        1220,
+        180
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "LATENT",
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            26
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.60",
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        1
+      ]
+    },
+    {
+      "id": 1,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        -360,
+        -310
+      ],
+      "size": [
+        270,
+        98
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "MODEL",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            1
+          ]
+        },
+        {
+          "label": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            2
+          ]
+        },
+        {
+          "label": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            25
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.60",
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "WAI_NSFW-illustrious-SDXL_v11.safetensors"
+      ]
+    },
+    {
+      "id": 19,
+      "type": "DvD_LoraLoader_Standard",
+      "pos": [
+        -60,
+        80
+      ],
+      "size": [
+        400,
+        310
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 27
+        },
+        {
+          "label": "clip",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 28
+        },
+        {
+          "label": "pre_text",
+          "name": "pre_text",
+          "shape": 7,
+          "type": "STRING",
+          "link": 29
+        }
+      ],
+      "outputs": [
+        {
+          "label": "MODEL",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            30
+          ]
+        },
+        {
+          "label": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            31,
+            32
+          ]
+        },
+        {
+          "label": "trigger_text",
+          "name": "trigger_text",
+          "type": "STRING",
+          "links": [
+            33,
+            34
+          ]
+        },
+        {
+          "label": "info_log",
+          "name": "info_log",
+          "type": "STRING",
+          "links": [
+            35
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "idvdii/ComfyUI-DvD-LoraTriggerwordsManager",
+        "ver": "6316912320a98e60a735e1e4e5f885acedb944c1",
+        "Node name for S&R": "DvD_LoraLoader_Standard"
+      },
+      "widgets_values": [
+        "画风/wigostyle.safetensors",
+        1,
+        1,
+        "Read (只读)",
+        "",
+        [
+          false,
+          true
+        ]
+      ]
+    },
+    {
+      "id": 11,
+      "type": "StringFunction|pysssss",
+      "pos": [
+        670,
+        -310
+      ],
+      "size": [
+        410,
+        520
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "text_b",
+          "name": "text_b",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "text_b"
+          },
+          "link": 15
+        }
+      ],
+      "outputs": [
+        {
+          "label": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            16
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-custom-scripts",
+        "ver": "f2838ed5e59de4d73cde5c98354b87a8d3200190",
+        "Node name for S&R": "StringFunction|pysssss"
+      },
+      "widgets_values": [
+        "append",
+        "yes",
+        "",
+        "",
+        "1girl, upper_body, looking_at_viewer, ",
+        [
+          false,
+          true
+        ],
+        [
+          false,
+          true
+        ],
+        [
+          false,
+          true
+        ],
+        "yanami anna, wigo, glowing eye trail, 1girl, upper_body, looking_at_viewer,"
+      ]
+    },
+    {
+      "id": 17,
+      "type": "PreviewImage",
+      "pos": [
+        1790,
+        -230
+      ],
+      "size": [
+        340,
+        640
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "link": 24
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.60",
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "MODEL"
+    ],
+    [
+      2,
+      1,
+      1,
+      2,
+      1,
+      "CLIP"
+    ],
+    [
+      6,
+      2,
+      3,
+      5,
+      0,
+      "*"
+    ],
+    [
+      7,
+      2,
+      2,
+      6,
+      0,
+      "*"
+    ],
+    [
+      10,
+      4,
+      1,
+      10,
+      0,
+      "*"
+    ],
+    [
+      11,
+      4,
+      2,
+      9,
+      0,
+      "*"
+    ],
+    [
+      15,
+      10,
+      0,
+      11,
+      0,
+      "STRING"
+    ],
+    [
+      16,
+      11,
+      0,
+      12,
+      1,
+      "STRING"
+    ],
+    [
+      19,
+      4,
+      0,
+      14,
+      0,
+      "MODEL"
+    ],
+    [
+      20,
+      12,
+      0,
+      14,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      21,
+      13,
+      0,
+      14,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      23,
+      14,
+      0,
+      16,
+      0,
+      "LATENT"
+    ],
+    [
+      24,
+      16,
+      0,
+      17,
+      0,
+      "IMAGE"
+    ],
+    [
+      25,
+      1,
+      2,
+      16,
+      1,
+      "VAE"
+    ],
+    [
+      26,
+      18,
+      0,
+      14,
+      3,
+      "LATENT"
+    ],
+    [
+      27,
+      2,
+      0,
+      19,
+      0,
+      "MODEL"
+    ],
+    [
+      28,
+      2,
+      1,
+      19,
+      1,
+      "CLIP"
+    ],
+    [
+      29,
+      2,
+      2,
+      19,
+      2,
+      "STRING"
+    ],
+    [
+      30,
+      19,
+      0,
+      4,
+      0,
+      "MODEL"
+    ],
+    [
+      31,
+      19,
+      1,
+      12,
+      0,
+      "CLIP"
+    ],
+    [
+      32,
+      19,
+      1,
+      13,
+      0,
+      "CLIP"
+    ],
+    [
+      33,
+      19,
+      2,
+      7,
+      0,
+      "*"
+    ],
+    [
+      34,
+      19,
+      2,
+      4,
+      1,
+      "STRING"
+    ],
+    [
+      35,
+      19,
+      3,
+      8,
+      0,
+      "*"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "DvD",
+      "bounding": [
+        -70,
+        -380,
+        1160,
+        1043.5999755859375
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ue_links": [],
+    "links_added_by_ue": [],
+    "ds": {
+      "scale": 0.541556988737877,
+      "offset": [
+        1330.8332824707031,
+        733.454158782959
+      ]
+    },
+    "frontendVersion": "1.26.13",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
