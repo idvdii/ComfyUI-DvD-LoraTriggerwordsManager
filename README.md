@@ -15,6 +15,8 @@ Seamlessly read, edit, and save trigger words in **WebUI (Automatic1111) compati
 *   🔗 **智能合并 (Auto-Merge)**: 支持单体串联或堆栈式加载，所有 LoRA 的触发词会自动以逗号分隔进行合并输出，无需额外的文本拼接节点。
 *   🐍 **纯后端实现 (Pure Python)**: 零前端依赖，运行稳定，无需复杂的安装步骤。
 
+![Example Workflow](assets/example_workflow.png)
+
 ## 📦 Nodes (节点介绍)
 
 ### 1. DvD LoRA Loader (Trigger Words)
@@ -102,4 +104,5 @@ A standard `.json` file is **automatically created** with the correct format. Yo
 ---
 
 **License**: MIT
+
 
