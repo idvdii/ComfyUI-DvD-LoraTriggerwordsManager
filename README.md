@@ -8,11 +8,12 @@ Seamlessly read, edit, and save trigger words in **WebUI (Automatic1111) compati
 
 ## ✨ Features (功能特性)
 
-*   📖 自动读取 (Auto-Read): 自动识别并加载 LoRA 同级目录下的与 LoRA 同名 .json, .txt文件中的触发词。
-*   ✍️ 双向读写 (Read & Edit): 不仅能读取，还能直接在节点内修改触发词并保存。
-*   🔄 WebUI 格式对齐 (WebUI Alignment): 写入文件时严格遵循 A1111 WebUI 的标准 JSON 格式（如 "activation text", "sd version"），确保跨软件兼容性，不破坏原有数据。
-*   🔗 智能合并 (Auto-Merge): 支持单体串联或堆栈式加载，所有 LoRA 的触发词会自动以逗号分隔进行合并输出，无需额外的文本拼接节点。
-*   🐍 纯后端实现 (Pure Python): 零前端依赖，运行稳定，无需复杂的安装步骤。
+*   📖 **自动读取 (Auto-Read)**: 自动识别并加载 LoRA 同级目录下的与 LoRA 同名 .json, .txt文件中的触发词。
+*   🌐 **智能联网 (Smart Lookup)**: **(New!)** 当本地没有触发词文件时，自动计算模型哈希值 (AutoV3/V2) 并从 Civitai 获取触发词，自动生成配置文件。
+*   ✍️ **双向读写 (Read & Edit)**: 不仅能读取，还能直接在节点内修改触发词并保存。
+*   🔄 **WebUI 格式对齐 (WebUI Alignment)**: 写入文件时严格遵循 A1111 WebUI 的标准 JSON 格式（如 "activation text", "sd version"），确保跨软件兼容性，不破坏原有数据。
+*   🔗 **智能合并 (Auto-Merge)**: 支持单体串联或堆栈式加载，所有 LoRA 的触发词会自动以逗号分隔进行合并输出，无需额外的文本拼接节点。
+*   🐍 **纯后端实现 (Pure Python)**: 零前端依赖，运行稳定，无需复杂的安装步骤。
 
 ## 📦 Nodes (节点介绍)
 
@@ -75,10 +76,28 @@ The generated JSON files use the standard format (`"activation text"`, etc.), en
 | WebUI Format vs Plugin Format | Smart Update (Preserve Data) |
 | :---: | :---: |
 | ![Format](assets/demo_04_format.png) | ![Update](assets/demo_05_update.png) |
+
+### 5. Automatic Discovery (演示：自动抓取触发词)
+**Scenario:** You downloaded a "naked" LoRA (`.safetensors` only) and don't know the trigger words.
+**场景**：你下载了一个只有 `.safetensors` 的 LoRA，没有元数据文件。
+
+**1. The initial folder (No JSON / 初始状态无JSON):**
+![Initial Folder](assets/auto_01_folder.png)
+
+**2. Automatic Online Lookup (自动计算哈希并联网查询):**
+Just run the node. It calculates the hash, queries Civitai, and finds the correct tags (e.g. "MMD, 3D").
+直接运行节点，它会自动通过哈希值从 Civitai 找到正确的触发词。
+![Console Log](assets/auto_03_log.png)
+
+**3. Generation & Saving (生成并保存):**
+The tags are injected into the prompt, and a standard `.json` file is **automatically created**.
+触发词自动填入，且自动生成了标准的 JSON 文件，下次使用无需再联网。
+![Result](assets/auto_04_image.png)
+![JSON Created](assets/auto_05_json_file.png)
+
+**4. Result Content (生成的JSON内容):**
+![JSON Content](assets/auto_06_json_content.png)
+
 ---
 
 **License**: MIT
-
-
-
-
